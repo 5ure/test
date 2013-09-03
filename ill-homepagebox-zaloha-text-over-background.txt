@@ -1,0 +1,19 @@
+
+#set ($sizeClass=" td"+(12/$Content.getSiblings().size()))
+
+<div class="ill-promo">
+    <table>
+    <tr>
+#foreach( $promo in $Content.getSiblings() )
+        #if($velocityCount != 1) <td class="ill-promo-separator"> #end
+        <td class="ill-promo-inner$sizeClass">
+            <div class="ill-p-container">
+                <div class="ill-p-image"><img src="$promo.Image.getData()"/></div>
+                <div class="ill-p-design"></div>
+                <div class="ill-p-content">$promo.getData()</div>
+            </div>
+        </td>        
+#end
+    </tr>
+    </table>
+</div>
